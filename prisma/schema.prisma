@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(uuid()) 
+  username String @db.VarChar(30) @unique
+  password String  
+  book Book?
+}
+
+model Book {
+  id         String        @id @default(uuid())
+  name String @db.VarChar(20) @unique
+  genre Genre
+  
+ }
+
+model Loan {
+  id     String  @id @default(uuid())
+  
+}
+
+enum Genre {
+  science_fiction
+  historical_fiction
+  fairy_tale
+  biography
+}
+ 
+ 
