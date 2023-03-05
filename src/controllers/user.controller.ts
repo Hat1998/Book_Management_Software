@@ -1,5 +1,4 @@
-import { Role } from "@prisma/client";
-import { prisma } from "../config/db";
+  import { prisma } from "../config/db";
 import { Request, Response } from "express";
 
  

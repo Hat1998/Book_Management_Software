@@ -1,5 +1,4 @@
-import { Role } from "@prisma/client";
-import { prisma } from "../config/db";
+ import { prisma } from "../config/db";
 import { Request, Response } from "express";
 
  
@@ -7,7 +6,7 @@ export const getAllBooks= async (req: Request, res: Response) => {
   try {
     let books = await prisma.user.findMany();
 
-    res.json({ "books": books });
+    res.json({ "boOks": books });
   } catch (err) {
     console.log(err);
   }
